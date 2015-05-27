@@ -1,26 +1,25 @@
-package daw.ed.spark;
+package Entidad;
 
 
-
-public class User {
+public class Jugador {
 
     private String firstname;
     private String lastname;
-    private String cumple;
-    private String salario;
+    private String fecha_nac;
+    private String salario; 
     private String posicion;
-    private String duracioncont;
+    private String duracion;
 
-    public User() {
+    public Jugador() {
     }
 
-    public User(String firstname, String lastname, String cumple, String salario, String posicion, String duracioncont) {
+    public Jugador(String firstname, String lastname, String fecha_nac, String salario, String posicion, String duracion) {
         this.firstname = firstname;
         this.lastname = lastname;
-        this.cumple = cumple;
+        this.fecha_nac = fecha_nac;
         this.salario = salario;
-        this. posicion = posicion;
-        this.duracioncont = duracioncont;
+        this.posicion = posicion;
+        this.duracion = duracion;
     }
 
    
@@ -40,20 +39,20 @@ public class User {
         this.lastname = lastname;
     }
 
-    public String getCumple() {
-        return cumple;
-    }
-
-    public void setCumple(String cumple) {
-        this.cumple = cumple;
-    }
-
     public String getSalario() {
         return salario;
     }
 
     public void setSalario(String salario) {
         this.salario = salario;
+    }
+
+    public String getFecha_nac() {
+        return fecha_nac;
+    }
+
+    public void setFecha_nac(String fecha_nac) {
+        this.fecha_nac = fecha_nac;
     }
 
     public String getPosicion() {
@@ -64,13 +63,12 @@ public class User {
         this.posicion = posicion;
     }
 
-    public String getDuracioncont() {
-        return duracioncont;
+    public String getDuracion() {
+        return duracion;
     }
 
-    public void setDuracioncont(String duracioncont) {
-        this.duracioncont = duracioncont;
+    public void setDuracion(String duracion) {
+        this.duracion = duracion;
     }
-    
-    
+
 }

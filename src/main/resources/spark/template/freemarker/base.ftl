@@ -1,7 +1,11 @@
 
 <#macro page_head>
-<title>Bienvenido al equipo de futbol Athletic de Valencia </title>
-<link rel="stylesheet" type="text/css" href="/css/styles.css" title="style">
+	<title>Base Template</title>
+</#macro>
+
+<#macro page_head>
+	<h1>Basic page</h1>
+	<p> This is the body of the page!</p>
 </#macro>
 
 <#macro display_page>

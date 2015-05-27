@@ -1,6 +1,7 @@
 package daw.ed.spark;
 
 import Entidad.Jugador;
+import DAO.DAO_JugadoresCrud;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -53,6 +54,37 @@ public class JugadoresCrud {
                   j1.setDuracion(request.queryParams("duracion"));
                   
                   DAO.DAO_JugadoresCrud.insertar(j1);
+                  
+                  
+                response.redirect("http://localhost:4567/freemarker/listar");
+                return response;
+            }
+        });   
+        
+        
+        get(new FreeMarkerRoute("track/delete/:lastname") {
+            @Override
+            public Object handle(Request request, Response response) {
+            DAO_JugadoresCrud.borrar(request.params("lastname"));
+            response.redirect("/listar");
+            return response;
+            }
+        });
+        
+        post (new Route("freemarker/update/:lastname") {
+            @Override
+            public Object handle(Request request, Response response) {
+                 
+                  Jugador j1 = new Jugador();
+        
+                  j1.setFirstname((request.queryParams("firstname")));
+                  j1.setLastname(request.queryParams("lastname"));
+                  j1.setFecha_nac(request.queryParams("fecha_nac"));
+                  j1.setSalario(request.queryParams("salario"));
+                  j1.setPosicion(request.queryParams("posicion"));
+                  j1.setDuracion(request.queryParams("duracion"));
+                  
+                  DAO_JugadoresCrud.modificar(j1);
                   
                   
                 response.redirect("http://localhost:4567/freemarker/listar");

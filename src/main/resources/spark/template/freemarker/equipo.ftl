@@ -1,6 +1,9 @@
 
 <#include "base.ftl">
-
+<#macro page_head>
+<title>Bienvenido al equipo de futbol Athletic de Valencia </title>
+<link rel="stylesheet" type="text/css" href="/css/styles.css" title="style">
+</#macro>
 <#macro page_body>
 <div id="header">
 <H2>

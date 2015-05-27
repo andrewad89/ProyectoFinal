@@ -18,6 +18,7 @@ import java.util.Arrays;
 import org.bson.Document;
 import org.bson.conversions.Bson;
 import static com.mongodb.ProyectoFinal.util.Helpers.printJson;
+import static com.mongodb.client.model.Filters.eq;
 
 /**
  *
@@ -36,7 +37,7 @@ public class DAO_JugadoresCrud {
     
     ArrayList <Jugador> jugadores = new ArrayList();
     
-    Bson sort1 = new Document("firstname",1);
+    Bson sort1 = new Document("nombre",1);
     Bson projection = fields(include("firstname","lastname","fecha_nac","salario","posicion","duracion"),excludeId());
         
         MongoCursor<Document> cursor = collection.find()
@@ -90,4 +91,26 @@ public class DAO_JugadoresCrud {
     .append("posicion",  j.getPosicion())      
     .append("duracion",  j.getDuracion());
     }
+    
+    public static void borrar (String lastname) {
+    MongoClient client = new MongoClient();
+    MongoDatabase database = client.getDatabase("equipo");
+    MongoCollection<Document> collection = database.getCollection("jugadores");
+    
+   collection.deleteOne(new Document("lastname", lastname));
+    
+     
+      client.close();
+    }
+
+    public static void modificar (Jugador j) {
+    MongoClient client = new MongoClient();
+    MongoDatabase database = client.getDatabase("equipo");
+    MongoCollection<Document> collection = database.getCollection("jugadores");
+    
+   collection.replaceOne(eq("lastname", j.getLastname()), creaDoc(j));
+     
+      client.close();
+    }
+    
 }

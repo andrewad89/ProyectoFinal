@@ -1,5 +1,6 @@
 package daw.ed.spark;
 
+import Entidad.Jugador;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -11,39 +12,52 @@ import static spark.Spark.get;
 import static spark.Spark.post;
 import spark.template.freemarker.FreeMarkerRoute;
 
-/*public class JugadoresCrud {
+public class JugadoresCrud {
 
     public static void main(String[] args) {
+       final Map<String, Object> data = new HashMap<>();
+       Spark.staticFileLocation("/public");
         
-        Spark.staticFileLocation("/public");
-        Map<String, Object> data = new HashMap<>();
-        
-        get (new FreeMarkerRoute("/freemarker/create"){
+     get (new FreeMarkerRoute("/freemarker/herencia"){
         @Override
         public Object handle(Request request,Response response){
-             
-                
-               data.put("users", users);
                
-              return modelAndView(data,"prueba.ftl");
+               data.put("name","Andrés");
+              return modelAndView(data,"content.ftl");
           }
     });
-   post (new Route("freemarker/create") {
+        
+        get (new FreeMarkerRoute("/freemarker/listar"){
+            @Override
+            public Object handle(Request request,Response response){
+            
+             Map<String, Object> data = new HashMap<>();
+                
+               data.put("jugadores", DAO.DAO_JugadoresCrud.listar());
+               
+              return modelAndView(data,"equipo.ftl");
+            }
+        });
+        
+        post (new Route("freemarker/create") {
             @Override
             public Object handle(Request request, Response response) {
-                  String firstname = request.queryParams("firstname");
-                  String lastname = request.queryParams("lastname");
+                 
+                  Jugador j1 = new Jugador();
+        
+                  j1.setFirstname((request.queryParams("firstname")));
+                  j1.setLastname(request.queryParams("lastname"));
+                  j1.setFecha_nac(request.queryParams("fecha_nac"));
+                  j1.setSalario(request.queryParams("salario"));
+                  j1.setPosicion(request.queryParams("posicion"));
+                  j1.setDuracion(request.queryParams("duracion"));
                   
-                  User us = new User(firstname,lastname);
-                    users.add(us);
+                  DAO.DAO_JugadoresCrud.insertar(j1);
                   
                   
-response.redirect("http://localhost:4567/freemarker/prueba");
+                response.redirect("http://localhost:4567/freemarker/listar");
                 return response;
-}
-            });
-    });
-          
+            }
+        });   
     }
 }
-*/

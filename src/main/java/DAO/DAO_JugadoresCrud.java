@@ -25,19 +25,10 @@ import static com.mongodb.ProyectoFinal.util.Helpers.printJson;
  */
 public class DAO_JugadoresCrud {
     public static void main(String [] args) {
-        Jugador j1 = new Jugador();
-        j1.setFirstname("Pedro");
-        j1.setLastname("Mogort");
-        j1.setFecha_nac("21-03-1986");
-        j1.setSalario("200.000 €");
-        j1.setPosicion("Lateral izquierdo");
-        j1.setDuracion("2 años");
-        
-        insertar(j1);
-        listar();
+       
     
 }
-    public static void listar(){
+    public static ArrayList listar(){
         
     MongoClient client = new MongoClient();
     MongoDatabase database = client.getDatabase("equipo");
@@ -55,10 +46,10 @@ public class DAO_JugadoresCrud {
         try {
             while (cursor.hasNext()) {
                 jugadores.add(creaJugador(cursor.next()));
-                printJson(cursor.next());
             }
         } finally {
             cursor.close();
+            return jugadores;
         }
     }
     

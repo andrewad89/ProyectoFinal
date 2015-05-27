@@ -36,7 +36,7 @@ public class DAO_JugadoresCrud {
     
     ArrayList <Jugador> jugadores = new ArrayList();
     
-    Bson sort1 = new Document("nombre",1);
+    Bson sort1 = new Document("firstname",1);
     Bson projection = fields(include("firstname","lastname","fecha_nac","salario","posicion","duracion"),excludeId());
         
         MongoCursor<Document> cursor = collection.find()

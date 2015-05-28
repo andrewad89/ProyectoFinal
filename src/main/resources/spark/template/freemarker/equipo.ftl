@@ -1,26 +1,7 @@
 
 <#include "base.ftl">
 
-<#macro page_body>
-<div id="header">
-<H2>
-Equipo Athletic de Valencia
-</H2>
-</div>
-<div id="content">
-<#-- hola -->
-<fieldset>
-<legend> Añade un jugador</legend>
-<form name="jugador" action="create" method="post">
-Nombre: <input type="text" name="firstname" /> <br/>
-Apellido: <input type="text" name="lastname" /> <br/>
-Fecha de nacimiento: <input type="text" name="fecha_nac" /> <br/>
-Salario: <input type="text" name="salario" /> <br/>
-Posicion: <input type="text" name="posicion" /> <br/>
-Duracion contrato: <input type="text" name="duracion" /> <br/>
-<input type="submit" value=" Save " />
-</form>
-</fieldset>
+<#macro content>
 <br/>
 <table class="datatable">
 <tr>
@@ -29,6 +10,10 @@ Duracion contrato: <input type="text" name="duracion" /> <br/>
 <#list jugadores as jugador>
 <tr>
 <td>${jugador.firstname}</td> <td>${jugador.lastname}</td> <td>${jugador.fecha_nac}</td> <td>${jugador.salario}</td> <td>${jugador.posicion}</td> <td>${jugador.duracion}</td>
+<td>
+<a href="delete/${jugador.lastname}" class="btn btn-default btn-xs">Borrar</a>
+<a href="updateSearch/${jugador.lastname}" class="btn btn-default btn-xs">Actualizar</a>
+</td>
 </tr>
 </#list>
 </table>

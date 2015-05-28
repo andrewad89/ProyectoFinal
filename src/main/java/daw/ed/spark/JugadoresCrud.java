@@ -1,5 +1,6 @@
 package daw.ed.spark;
 
+import DAO.DAO_JugadoresCrud;
 import Entidad.Jugador;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -18,16 +19,9 @@ public class JugadoresCrud {
        final Map<String, Object> data = new HashMap<>();
        Spark.staticFileLocation("/public");
         
-     get (new FreeMarkerRoute("/freemarker/herencia"){
-        @Override
-        public Object handle(Request request,Response response){
-               
-               data.put("name","Andrés");
-              return modelAndView(data,"content.ftl");
-          }
-    });
+  
         
-        get (new FreeMarkerRoute("/freemarker/listar"){
+        get (new FreeMarkerRoute("/listar"){
             @Override
             public Object handle(Request request,Response response){
             
@@ -38,8 +32,15 @@ public class JugadoresCrud {
               return modelAndView(data,"equipo.ftl");
             }
         });
+        get (new FreeMarkerRoute("/form"){
+            @Override
+            public Object handle(Request request,Response response){
+            
+              return modelAndView(null,"formulario.ftl");
+            }
+        });
         
-        post (new Route("freemarker/create") {
+        post (new Route("/create") {
             @Override
             public Object handle(Request request, Response response) {
                  
@@ -55,9 +56,46 @@ public class JugadoresCrud {
                   DAO.DAO_JugadoresCrud.insertar(j1);
                   
                   
-                response.redirect("http://localhost:4567/freemarker/listar");
+                response.redirect("/listar");
                 return response;
             }
-        });   
+        });
+        
+        get(new FreeMarkerRoute("/delete/:lastname") {
+            @Override
+            public Object handle(Request request, Response response) {
+            DAO_JugadoresCrud.eliminar(request.params("lastname"));
+            response.redirect("/listar");
+            return response;
+            }
+        });
+        post (new Route("/updateSearch/update/:lastname") {
+            @Override
+            public Object handle(Request request, Response response) {
+                 
+                  Jugador j1 = new Jugador();
+                  j1.setFirstname((request.queryParams("firstname")));
+                  j1.setLastname(request.queryParams("lastname"));
+                  j1.setFecha_nac(request.queryParams("fecha_nac"));
+                  j1.setSalario(request.queryParams("salario"));
+                  j1.setPosicion(request.queryParams("posicion"));
+                  j1.setDuracion(request.queryParams("duracion"));
+                  
+                  DAO.DAO_JugadoresCrud.modificar(j1);
+                  
+                  
+                response.redirect("/listar");
+                return response;
+            }
+        });
+        
+         get(new FreeMarkerRoute("/updateSearch/:lastname") {
+            @Override
+            public Object handle(Request request, Response response) {
+            data.put("jugador", DAO_JugadoresCrud.buscar(request.params("lastname")));
+            return modelAndView(data, "update.ftl");
+            }
+        });
     }
+    
 }

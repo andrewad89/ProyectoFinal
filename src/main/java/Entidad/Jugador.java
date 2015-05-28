@@ -13,7 +13,14 @@ public class Jugador {
     public Jugador() {
     }
 
-    public Jugador(String firstname, String lastname, String fecha_nac, String salario, String posicion, String duracion) {
+    public Jugador(
+            String firstname,
+            String lastname,
+            String fecha_nac,
+            String salario,
+            String posicion,
+            String duracion) {
+        
         this.firstname = firstname;
         this.lastname = lastname;
         this.fecha_nac = fecha_nac;

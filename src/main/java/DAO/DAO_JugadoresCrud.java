@@ -6,6 +6,7 @@
 package DAO;
 
 import Entidad.Jugador;
+import daw.ed.spark.JugadoresCrud;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
@@ -37,6 +38,7 @@ public class DAO_JugadoresCrud {
     
     ArrayList <Jugador> jugadores = new ArrayList();
     
+
     Bson sort1 = new Document("firstname",1);
     Bson projection = fields(include(
             "firstname",
@@ -46,7 +48,7 @@ public class DAO_JugadoresCrud {
             "posicion",
             "duracion"),
             excludeId());
-        
+     
         MongoCursor<Document> cursor = collection.find()
                     .sort(sort1)
                     .projection(projection)
@@ -99,7 +101,8 @@ public class DAO_JugadoresCrud {
     .append("duracion",  j.getDuracion());
     }
     
-     public static void eliminar(String lastname) {
+
+     public static void borrar(String lastname) {
         
         MongoClient client = new MongoClient();
         
@@ -132,6 +135,9 @@ public class DAO_JugadoresCrud {
         
         client.close();
         return j;
-}
+
+    }
+
+
 }
 

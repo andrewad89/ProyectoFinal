@@ -2,6 +2,7 @@ package daw.ed.spark;
 
 import DAO.DAO_JugadoresCrud;
 import Entidad.Jugador;
+import DAO.DAO_JugadoresCrud;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -61,19 +62,26 @@ public class JugadoresCrud {
             }
         });
         
+        
+        
+        
         get(new FreeMarkerRoute("/delete/:lastname") {
             @Override
             public Object handle(Request request, Response response) {
-            DAO_JugadoresCrud.eliminar(request.params("lastname"));
+            DAO_JugadoresCrud.borrar(request.params("lastname"));
+
             response.redirect("/listar");
             return response;
             }
         });
+
         post (new Route("/updateSearch/update/:lastname") {
+
             @Override
             public Object handle(Request request, Response response) {
                  
                   Jugador j1 = new Jugador();
+
                   j1.setFirstname((request.queryParams("firstname")));
                   j1.setLastname(request.queryParams("lastname"));
                   j1.setFecha_nac(request.queryParams("fecha_nac"));
@@ -95,7 +103,8 @@ public class JugadoresCrud {
             data.put("jugador", DAO_JugadoresCrud.buscar(request.params("lastname")));
             return modelAndView(data, "update.ftl");
             }
-        });
+        }); 
+
     }
     
 }

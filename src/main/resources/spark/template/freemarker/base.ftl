@@ -9,6 +9,7 @@
 <#macro menu>
 <a href="/listar"><button type="button" class="btn btn-primary">Lista</button></a>
 <a href="/form"><button type="button" class="btn btn-success">Añadir</button></a>
+	<title>Base Template</title>
 </#macro>
 
 

@@ -1,8 +1,8 @@
 
 <#include "base.ftl">
 
+
 <#macro content>
-<br/>
 <table class="datatable">
 <tr>
 <th>Firstname</th> <th>Lastname</th> <th>Fecha de nacimiento</th> <th>Salario</th> <th>Posicion</th> <th>Duracion contrato</th>

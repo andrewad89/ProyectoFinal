@@ -5,6 +5,8 @@
  */
 package DAO;
 
+
+
 import Entidad.Jugador;
 import daw.ed.spark.JugadoresCrud;
 import com.mongodb.MongoClient;
@@ -105,14 +107,15 @@ public class DAO_JugadoresCrud {
      public static void borrar(String lastname) {
         
         MongoClient client = new MongoClient();
-        
         MongoDatabase database = client.getDatabase("equipo");
         MongoCollection<Document> collection = database.getCollection("jugadores");
+        
         collection.deleteOne(new Document("lastname", lastname));
         
         client.close();
         
-}   public static void modificar (Jugador j) {
+}  
+     public static void modificar (Jugador j) {
     
         MongoClient client = new MongoClient();
         MongoDatabase database = client.getDatabase("equipo");
@@ -137,6 +140,8 @@ public class DAO_JugadoresCrud {
         return j;
 
     }
+    
+    
 
 
 }

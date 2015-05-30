@@ -1,6 +1,6 @@
 <#include "base.ftl">
 <#macro content>
-<form class="form-horizontal" name="jugador" action="update/${jugador.lastname}" method="post">
+<form class="form-horizontal" name="jugador" action="update/${jugador.id}" method="post">
 <div class="form-group">
 <label for="inputEmail3" class="col-sm-2 control-label">Nombre</label>
 <div class="col-sm-10">

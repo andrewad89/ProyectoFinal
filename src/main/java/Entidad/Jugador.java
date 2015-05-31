@@ -2,7 +2,8 @@ package Entidad;
 
 
 public class Jugador {
-
+    
+    private Double id;
     private String firstname;
     private String lastname;
     private String fecha_nac;
@@ -14,19 +15,28 @@ public class Jugador {
     }
 
     public Jugador(
+            Double id,
             String firstname,
             String lastname,
             String fecha_nac,
             String salario,
             String posicion,
             String duracion) {
-        
+        this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
         this.fecha_nac = fecha_nac;
         this.salario = salario;
         this.posicion = posicion;
         this.duracion = duracion;
+    }
+
+    public Double getId() {
+        return id;
+    }
+
+    public void setId(Double id) {
+        this.id = id;
     }
 
    

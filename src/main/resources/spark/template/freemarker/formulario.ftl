@@ -2,7 +2,7 @@
 <#macro content>
 <div id="content">
 <fieldset>
-<legend> Añade un jugador</legend>
+<legend> Agrega un jugador</legend>
 <form name="jugador" action="create" method="post">
 Nombre: <input type="text" name="firstname" /> <br/>
 Apellido: <input type="text" name="lastname" /> <br/>

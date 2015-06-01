@@ -26,13 +26,12 @@
           </div>
 
           <div class="botones">
-            <a href="listar" class="btn btn-primary">Ver plantilla</a>
-            <a href="form" class="btn btn-success">A&ntilde;adir jugador</a>  
+            <a href="/" class="btn btn-primary">Ver plantilla</a>
+            <a href="/form" class="btn btn-success">A&ntilde;adir jugador</a>  
           </div> 
 
           <div id="content">
-                <br>
-                <@content/> 
+            <@content/> 
           </div>
 
           <footer class="footer">

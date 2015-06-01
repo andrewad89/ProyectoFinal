@@ -25,7 +25,7 @@ import static com.mongodb.client.model.Filters.eq;
 
 public class DAO_JugadoresCrud {
     
-    static Conexion datab = new Conexion("jugadores");
+    static Conexion datab = new Conexion("equipo");
     
     public static void iniciar() {
     datab.abrir();

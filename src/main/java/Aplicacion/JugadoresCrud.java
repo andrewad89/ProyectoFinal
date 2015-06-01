@@ -29,7 +29,7 @@ public class JugadoresCrud {
         
        DAO_JugadoresCrud.iniciar();
         
-        get (new FreeMarkerRoute("/listar"){
+        get (new FreeMarkerRoute("/"){
             @Override
             public Object handle(Request request,Response response){
             
@@ -64,7 +64,7 @@ public class JugadoresCrud {
                   DAO.DAO_JugadoresCrud.insertar(j1);
                   
                   
-                response.redirect("/listar");
+                response.redirect("/");
                 return response;
             }
         });
@@ -77,7 +77,7 @@ public class JugadoresCrud {
             public Object handle(Request request, Response response) {
             DAO_JugadoresCrud.borrar(Double.parseDouble(request.params("_id")));
 
-            response.redirect("/listar");
+            response.redirect("/");
             return response;
             }
         });
@@ -100,7 +100,7 @@ public class JugadoresCrud {
                   DAO.DAO_JugadoresCrud.modificar(j1);
                   
                   
-                response.redirect("/listar");
+                response.redirect("/");
                 return response;
             }
         });

@@ -2967,6 +2967,10 @@ select[multiple].form-group-lg .form-control {
   margin-right: -15px;
   margin-left: -15px;
 }
+.form-horizontal .control-label{
+  color: #FFF;
+  text-shadow: 2px 2px rgba(11, 44, 16, 0.77);
+}
 @media (min-width: 768px) {
   .form-horizontal .control-label {
     padding-top: 7px;

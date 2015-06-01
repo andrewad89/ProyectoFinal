@@ -35,23 +35,25 @@ body {
     line-height: 40px;
 }
 .botones {text-align: center;}
-
+.formulario{background-color: white}
 /* Custom page footer */
 .footer {
-    padding-top: 19px;
-    color: #c1e2b3;
-    border-top: 1px solid #e5e5e5;
 			border-radius:5px;
-			padding: 10px;
-			padding-left: 20px;
 			margin: 0 auto 50px;
 			margin-top:30px;
-			font-size:13pt;
-			background-color:orangered;
-			width:80%;
+			font-size:12pt;
 			color:white;
-			font-family: Georgia ;
 			text-align: center;
+      background: rgba(255,175,75,1);
+      background: -moz-linear-gradient(top, rgba(255,175,75,1) 0%, rgba(255,10,10,0.55) 100%);
+      background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,175,75,1)), color-stop(100%, rgba(255,10,10,0.55)));
+      background: -webkit-linear-gradient(top, rgba(255,175,75,1) 0%, rgba(255,10,10,0.55) 100%);
+      background: -o-linear-gradient(top, rgba(255,175,75,1) 0%, rgba(255,10,10,0.55) 100%);
+      background: -ms-linear-gradient(top, rgba(255,175,75,1) 0%, rgba(255,10,10,0.55) 100%);
+      background: linear-gradient(to bottom, rgba(255,175,75,1) 0%, rgba(255,10,10,0.55) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', endColorstr='#ff0a0a', GradientType=0 );
+    color:white;
+    text-align: center;
 }
 
 /* Customize container */
@@ -68,13 +70,13 @@ body {
 .jumbotron {
 
     background: rgba(255,175,75,1);
-    background: -moz-linear-gradient(left, rgba(255,175,75,1) 0%, rgba(255,10,10,1) 100%);
-    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,175,75,1)), color-stop(100%, rgba(255,10,10,1)));
-    background: -webkit-linear-gradient(left, rgba(255,175,75,1) 0%, rgba(255,10,10,1) 100%);
-    background: -o-linear-gradient(left, rgba(255,175,75,1) 0%, rgba(255,10,10,1) 100%);
-    background: -ms-linear-gradient(left, rgba(255,175,75,1) 0%, rgba(255,10,10,1) 100%);
-    background: linear-gradient(to right, rgba(255,175,75,1) 0%, rgba(255,10,10,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', endColorstr='#ff0a0a', GradientType=1 );
+background: -moz-linear-gradient(top, rgba(255,175,75,1) 0%, rgba(255,10,10,0.55) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,175,75,1)), color-stop(100%, rgba(255,10,10,0.55)));
+background: -webkit-linear-gradient(top, rgba(255,175,75,1) 0%, rgba(255,10,10,0.55) 100%);
+background: -o-linear-gradient(top, rgba(255,175,75,1) 0%, rgba(255,10,10,0.55) 100%);
+background: -ms-linear-gradient(top, rgba(255,175,75,1) 0%, rgba(255,10,10,0.55) 100%);
+background: linear-gradient(to bottom, rgba(255,175,75,1) 0%, rgba(255,10,10,0.55) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', endColorstr='#ff0a0a', GradientType=0 );
     color:white;
     text-align: center;
     border-bottom: 1px solid #e5e5e5;

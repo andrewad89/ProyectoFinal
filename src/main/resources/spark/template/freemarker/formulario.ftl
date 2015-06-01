@@ -28,19 +28,19 @@
 			    </div>
 			  </div>
 			  <div class="form-group">
-			    <label for="posicion" class="col-sm-2 control-label">Posición</label>
+			    <label for="posicion" class="col-sm-2 control-label">Posici&oacute;n</label>
 			    <div class="col-xs-4">
-			    	<input type="posicion" class="form-control" name="posicion" placeholder="Introduce la posición">
+			    	<input type="posicion" class="form-control" name="posicion" placeholder="Introduce la posici&oacute;n">
 			    </div>
 			  </div>
 			   <div class="form-group">
-			    <label for="duracion" class="col-sm-2 control-label">Duración</label>
+			    <label for="duracion" class="col-sm-2 control-label">Duraci&oacute;n</label>
 			    <div class="col-xs-4">
-			    	<input type="duracion" class="form-control" name="duracion" placeholder="Introduce la duración del contrato">
+			    	<input type="duracion" class="form-control" name="duracion" placeholder="Introduce la duraci&oacute;n del contrato">
 			    </div>
 			  </div>
 			  <div class="botones">
-			  <button type="submit" class="btn btn-primary">Añadir</button>
+			  <button type="submit" class="btn btn-primary">A&ntilde;adir</button>
 			  </div>
 			</form>
 		</div>

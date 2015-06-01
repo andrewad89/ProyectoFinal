@@ -28,7 +28,11 @@
                 </tr>
                 </#list>
             </table>
+<p align="center">
 
+<img src="escudo.png" WIDTH=250 HEIGHT=200 ALT="escudo">>
+
+</p>
             <nav>
                 <ul class="pagination">
                     <li>

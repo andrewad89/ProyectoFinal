@@ -13,6 +13,8 @@ import spark.Route;
 import spark.Spark;
 import static spark.Spark.get;
 import static spark.Spark.post;
+import static spark.Spark.setIpAddress;
+import static spark.Spark.setPort;
 import spark.template.freemarker.FreeMarkerRoute;
 
 public class JugadoresCrud {
@@ -24,6 +26,9 @@ public class JugadoresCrud {
                                  System.getenv("OPENSHIFT_DIY_IP") : "localhost";
        final int PORT = System.getenv("OPENSHIFT_DIY_PORT") != null ? 
                Integer.parseInt(System.getenv("OPENSHIFT_DIY_PORT")) : 4567;
+       
+       setIpAddress(IP_ADDRESS);
+       setPort(PORT);
        
        Spark.staticFileLocation("/public");
         
